@@ -254,7 +254,19 @@ export default function ContactSection() {
         </div>
 
         {/* Trust Section */}
-        <div className="bg-gradient-to-r from-slate-900/50 to-slate-900/20 border border-slate-700/50 rounded-xl p-8 text-center">
+        <div className="relative bg-gradient-to-r from-slate-900/50 to-slate-900/20 border border-slate-700/50 rounded-xl p-8 text-center overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/roy-profile.png"
+              alt="Roy Davidi"
+              className="w-full h-full object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/70" />
+          </div>
+          
+          {/* Content */}
+          <div className="relative z-10">
           <h3 className="text-xl font-bold text-white mb-6">למה לבחור בי?</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
@@ -269,6 +281,7 @@ export default function ContactSection() {
               <div className="text-3xl font-bold text-pink-400 mb-2">10+</div>
               <p className="text-white/70">פרויקטים מוגמרים בהצלחה</p>
             </div>
+          </div>
           </div>
         </div>
       </div>
