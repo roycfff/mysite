@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Workflow, Cog, Palette } from "lucide-react"
+import { Workflow, Cog, Palette, TrendingUp } from "lucide-react"
 
 export default function ServicesSection() {
   const services = [
@@ -34,6 +34,16 @@ export default function ServicesSection() {
       bgColor: "from-pink-900/20 to-pink-900/5",
       borderColor: "border-pink-500/30",
     },
+    {
+      icon: TrendingUp,
+      title: "מערכת מסחר אלגורתימית מבוססת AI",
+      description: "בניית מערכת מסחר מבוססת על אסטרטגיה של הלקוח, עם מסחר אלגורתימי מבוסס בינה מלאכותית. ניתוח נתונים בזמן אמת וביצוע עסקאות אוטומטיות בהתאם לאסטרטגיה המותאמת.",
+      tools: ["AI Algorithms", "Real-time Data", "API Integration"],
+      forWho: "משקיעים, סוחרים וקרנות שרוצים אוטומציה חכמה של המסחר",
+      color: "from-green-500 to-emerald-500",
+      bgColor: "from-green-900/20 to-green-900/5",
+      borderColor: "border-green-500/30",
+    },
   ]
 
   return (
@@ -48,12 +58,12 @@ export default function ServicesSection() {
             איך נהפוך את העסק שלך לחכם יותר?
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            3 מסלולי הטמעה ממוקדים לטרנספורמציה דיגיטלית
+            4 מסלולי הטמעה ממוקדים לטרנספורמציה דיגיטלית
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
