@@ -1,22 +1,34 @@
-import { Button } from "@/components/ui/button";
-import { APP_LOGO, APP_TITLE } from "@/const";
+import Navigation from "@/components/Navigation";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ServicesSection from "@/components/ServicesSection";
+import TechStackSection from "@/components/TechStackSection";
+import ContactSection from "@/components/ContactSection";
 
-/**
- * All content in this page are only for example, delete if unneeded
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
-  // Use APP_LOGO (as image src) and APP_TITLE if needed
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        Example Page
-        <Button variant="default">Example Button</Button>
+    <div className="min-h-screen flex flex-col bg-black">
+      <Navigation />
+      <main className="w-full">
+        <HeroSection />
+        <section id="about">
+          <AboutSection />
+        </section>
+        <section id="services">
+          <ServicesSection />
+        </section>
+        <section id="tech">
+          <TechStackSection />
+        </section>
+        <section id="contact">
+          <ContactSection />
+        </section>
       </main>
+      <footer className="bg-black border-t border-white/10 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center text-white/50 text-sm">
+          <p>&copy; 2025 Roy Davidi - AI Implementation Specialist. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }
