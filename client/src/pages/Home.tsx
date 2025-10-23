@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import TechStackSection from "@/components/TechStackSection";
+import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
@@ -19,6 +20,9 @@ export default function Home() {
         </section>
         <section id="tech">
           <TechStackSection />
+        </section>
+        <section id="projects">
+          <ProjectsSection />
         </section>
         <section id="contact">
           <ContactSection />

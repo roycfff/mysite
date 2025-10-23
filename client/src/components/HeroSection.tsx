@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button"
 import { Wave } from "./Wave"
 import { ArrowRight, MessageCircle } from "lucide-react"
+import { ConsultationModal } from "./ConsultationModal"
+import { useState } from "react"
 
 export default function HeroSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <section className="relative w-full h-screen overflow-hidden">
       {/* Wave Background */}
@@ -39,7 +43,8 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 text-base h-12 px-8 rounded-lg"
+              onClick={() => setIsModalOpen(true)}
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 text-base h-12 px-8 rounded-lg cursor-pointer"
             >
               בנה לי אוטומציה חכמה
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -47,7 +52,8 @@ export default function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 text-base h-12 px-8 rounded-lg"
+              onClick={() => setIsModalOpen(true)}
+              className="border-white/30 text-white hover:bg-white/10 text-base h-12 px-8 rounded-lg cursor-pointer"
             >
               <MessageCircle className="ml-2 h-5 w-5" />
               קבע שיחת ייעוץ
@@ -77,6 +83,9 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Consultation Modal */}
+      <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   )
 }

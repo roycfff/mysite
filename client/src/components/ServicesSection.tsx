@@ -1,8 +1,12 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Workflow, Cog, Palette, TrendingUp } from "lucide-react"
+import { ConsultationModal } from "./ConsultationModal"
+import { useState } from "react"
 
 export default function ServicesSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const services = [
     {
       icon: Workflow,
@@ -118,10 +122,16 @@ export default function ServicesSection() {
           <p className="text-white/70 mb-6">
             בואו נדבר על הצרכים הספציפיים שלך ונמצא את הפתרון המושלם
           </p>
-          <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-lg font-semibold transition-all">
+          <Button
+            onClick={() => setIsModalOpen(true)}
+            className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-lg font-semibold transition-all cursor-pointer"
+          >
             קבע שיחת ייעוץ חינם
-          </button>
+          </Button>
         </div>
+
+        {/* Consultation Modal */}
+        <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </section>
   )

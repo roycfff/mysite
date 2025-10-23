@@ -9,6 +9,7 @@ export default function Navigation() {
     { label: "אודות", href: "#about" },
     { label: "שירותים", href: "#services" },
     { label: "טכנולוגיה", href: "#tech" },
+    { label: "פרויקטים", href: "#projects" },
     { label: "צור קשר", href: "#contact" },
   ]
 

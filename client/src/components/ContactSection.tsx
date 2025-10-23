@@ -51,7 +51,7 @@ export default function ContactSection() {
         </div>
 
         {/* Contact Cards */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {/* Phone Card */}
           <Card className="bg-gradient-to-br from-blue-900/20 to-blue-900/5 border-blue-500/30 p-8 hover:border-blue-500/60 transition-colors">
             <div className="flex items-start gap-4">
@@ -79,13 +79,57 @@ export default function ContactSection() {
                 <Mail className="h-6 w-6 text-purple-400" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-bold text-white">דוא"ל</h3>
-                <p className="text-white/70 mb-4">שלח לי הודעה עם הפרטים שלך</p>
+                <h3 className="text-lg font-bold text-white">Gmail</h3>
+                <p className="text-white/70 mb-4">שלח לי הודעה</p>
                 <a
                   href="mailto:roydavidi2004@gmail.com"
-                  className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-semibold"
+                  className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-semibold text-sm"
                 >
                   roydavidi2004@gmail.com
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </Card>
+
+          {/* WhatsApp Card */}
+          <Card className="bg-gradient-to-br from-green-900/20 to-green-900/5 border-green-500/30 p-8 hover:border-green-500/60 transition-colors">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MessageCircle className="h-6 w-6 text-green-400" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-bold text-white">WhatsApp</h3>
+                <p className="text-white/70 mb-4">שלח הודעה מהירה</p>
+                <a
+                  href="https://wa.me/972523570858"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold"
+                >
+                  052-3570858
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </Card>
+
+          {/* Telegram Card */}
+          <Card className="bg-gradient-to-br from-cyan-900/20 to-cyan-900/5 border-cyan-500/30 p-8 hover:border-cyan-500/60 transition-colors">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <MessageCircle className="h-6 w-6 text-cyan-400" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-bold text-white">Telegram</h3>
+                <p className="text-white/70 mb-4">צור קשר בטלגרם</p>
+                <a
+                  href="https://t.me/+972523570858"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold"
+                >
+                  052-3570858
                   <span>→</span>
                 </a>
               </div>
@@ -218,8 +262,8 @@ export default function ContactSection() {
               <p className="text-white/70">התמקדות בתוצאות מדידות</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-400 mb-2">8+</div>
-              <p className="text-white/70">שנות ניהול וניסיון</p>
+              <div className="text-3xl font-bold text-purple-400 mb-2">פרויקטים</div>
+              <p className="text-white/70">צפה בפרויקטים שהכנתי</p>
             </div>
             <div>
               <div className="text-3xl font-bold text-pink-400 mb-2">10+</div>
