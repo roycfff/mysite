@@ -1,35 +1,34 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Code, Sparkles } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 export default function ProjectsSection() {
   const projects = [
     {
-      title: "מערכת אוטומציה עסקית מלאה",
-      description: "בניית מערכת אוטומציה מקיפה לחברת סחר, כולל חיבור CRM, ניהול מלאי אוטומטי ודיווח בזמן אמת.",
-      tools: ["n8n", "Make.com", "API Integration"],
-      category: "Automation",
+      title: "GuardMe.com",
+      description: "הפכו את הסמארטפון שלכם לשומר אישי דיגיטלי. מערכת הגנה חכמה עם הקלטת שמע, מעקב מיקום והתראות חירום",
+      logo: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/3e6f12c3-af71-4a8e-bdb7-dafeaac12b2a/generated_images/modern-minimalist-logo-for-web-developme-a62c1619-20251015110814.jpg",
+      url: "https://guardme-safe-zone.lovable.app/auth",
+      siteName: "GuardMe Safe Zone",
+      category: "Security App",
       color: "from-blue-500 to-cyan-500",
     },
     {
-      title: "צ'אטבוט AI לשירות לקוחות",
-      description: "פיתוח צ'אטבוט מבוסס Claude AI שמטפל ב-80% מפניות הלקוחות באופן אוטומטי ומעביר רק מקרים מורכבים לנציגים.",
-      tools: ["Claude API", "Webhooks", "CRM Integration"],
-      category: "AI Integration",
+      title: "AI Match",
+      description: "Discover, compare, and build your perfect AI package with AI Match. Streamline your workflow and boost efficiency with our intelligent recommendation platform.",
+      logo: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/3e6f12c3-af71-4a8e-bdb7-dafeaac12b2a/generated_images/modern-minimalist-logo-for-web-developme-a62c1619-20251015110813.jpg",
+      url: "https://ai-match-09a2d309.base44.app",
+      siteName: "AI Match Platform",
+      category: "AI Platform",
       color: "from-purple-500 to-pink-500",
     },
     {
-      title: "קמפיין ויזואלי מלא ב-AI",
-      description: "יצירת 100+ תמונות ייחודיות לקמפיין שיווקי באמצעות Midjourney, כולל עיצוב לוגו, באנרים ותוכן לרשתות חברתיות.",
-      tools: ["Midjourney", "Prompt Engineering", "Design"],
-      category: "Visual Content",
-      color: "from-pink-500 to-rose-500",
-    },
-    {
-      title: "מערכת מסחר אלגורתימית",
-      description: "בניית מערכת מסחר אוטומטית מבוססת AI שמבצעת עסקאות על בסיס ניתוח נתונים בזמן אמת והתאמה לאסטרטגיית הלקוח.",
-      tools: ["AI Algorithms", "Real-time Data", "Trading APIs"],
-      category: "Algorithmic Trading",
+      title: "Build N Sparkle",
+      description: "Custom automation tools and workflows that streamline processes and increase efficiency. Advanced automation systems for modern businesses.",
+      logo: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/3e6f12c3-af71-4a8e-bdb7-dafeaac12b2a/generated_images/sleek-minimalist-logo-for-automation-sys-f655e448-20251015110823.jpg",
+      url: "https://build-n-sparkle.lovable.app/",
+      siteName: "Build N Sparkle",
+      category: "Automation",
       color: "from-green-500 to-emerald-500",
     },
   ]
@@ -51,13 +50,27 @@ export default function ProjectsSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="bg-gradient-to-br from-slate-900/50 to-slate-900/20 border-slate-700/50 p-8 hover:border-slate-600 transition-all duration-300 group"
+              className="bg-gradient-to-br from-slate-900/50 to-slate-900/20 border-slate-700/50 p-6 hover:border-slate-600 transition-all duration-300 group"
             >
-              <div className="space-y-4">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block space-y-4"
+              >
+                {/* Logo */}
+                <div className="w-full aspect-video bg-slate-800/50 rounded-lg overflow-hidden flex items-center justify-center p-4">
+                  <img
+                    src={project.logo}
+                    alt={project.title}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+
                 {/* Category Badge */}
                 <div className="flex items-center justify-between">
                   <Badge
@@ -65,35 +78,26 @@ export default function ProjectsSection() {
                   >
                     {project.category}
                   </Badge>
-                  <Sparkles className="h-5 w-5 text-white/30 group-hover:text-white/60 transition-colors" />
+                  <ExternalLink className="h-4 w-4 text-white/30 group-hover:text-white/60 transition-colors" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-white/70 leading-relaxed">
+                <p className="text-white/70 leading-relaxed text-sm">
                   {project.description}
                 </p>
 
-                {/* Tools */}
-                <div className="space-y-3 pt-4 border-t border-white/10">
-                  <p className="text-sm text-white/50 font-semibold">טכנולוגיות:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tools.map((tool, idx) => (
-                      <Badge
-                        key={idx}
-                        variant="secondary"
-                        className="bg-white/10 text-white/80 border-white/20"
-                      >
-                        {tool}
-                      </Badge>
-                    ))}
-                  </div>
+                {/* Site Name */}
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-sm text-white/50">
+                    <span className="font-semibold">אתר:</span> {project.siteName}
+                  </p>
                 </div>
-              </div>
+              </a>
             </Card>
           ))}
         </div>
