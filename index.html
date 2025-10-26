@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="אתר נגיש בהתאם לתקן ישראלי 5568">
+    <title>אתר נגיש - תקן ישראלי 5568</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- כפתור נגישות צף -->
+    <button id="accessibility-button" class="accessibility-button" aria-label="פתח תפריט נגישות" title="נגישות">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+        </svg>
+    </button>
+
+    <!-- פאנל נגישות -->
+    <div id="accessibility-panel" class="accessibility-panel" role="dialog" aria-labelledby="accessibility-title" aria-hidden="true">
+        <div class="accessibility-panel-content">
+            <div class="accessibility-header">
+                <h2 id="accessibility-title">הצהרת נגישות</h2>
+                <button id="close-panel" class="close-button" aria-label="סגור תפריט נגישות">×</button>
+            </div>
+
+            <p class="accessibility-description">
+                אתר זה נבנה בהתאם לתקן ישראלי 5568 ברמת AA של WCAG 2.0
+            </p>
+
+            <div class="accessibility-controls">
+                <!-- שינוי גודל טקסט -->
+                <div class="control-group">
+                    <h3>גודל טקסט</h3>
+                    <div class="button-group">
+                        <button class="control-button" data-action="decrease-text" aria-label="הקטן טקסט">
+                            <span aria-hidden="true">A-</span>
+                        </button>
+                        <button class="control-button" data-action="reset-text" aria-label="אפס גודל טקסט">
+                            <span aria-hidden="true">A</span>
+                        </button>
+                        <button class="control-button" data-action="increase-text" aria-label="הגדל טקסט">
+                            <span aria-hidden="true">A+</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ניגודיות -->
+                <div class="control-group">
+                    <h3>ניגודיות</h3>
+                    <div class="button-group">
+                        <button class="control-button" data-action="normal-contrast" aria-label="ניגודיות רגילה">
+                            רגיל
+                        </button>
+                        <button class="control-button" data-action="high-contrast" aria-label="ניגודיות גבוהה">
+                            ניגודיות גבוהה
+                        </button>
+                        <button class="control-button" data-action="dark-mode" aria-label="מצב כהה">
+                            מצב כהה
+                        </button>
+                    </div>
+                </div>
+
+                <!-- הדגשת קישורים -->
+                <div class="control-group">
+                    <h3>הדגשת קישורים</h3>
+                    <div class="button-group">
+                        <button class="control-button toggle" data-action="highlight-links" aria-label="הדגש קישורים">
+                            הדגש קישורים
+                        </button>
+                    </div>
+                </div>
+
+                <!-- פונט קריא -->
+                <div class="control-group">
+                    <h3>פונט קריא</h3>
+                    <div class="button-group">
+                        <button class="control-button toggle" data-action="readable-font" aria-label="פונט קריא">
+                            פונט קריא
+                        </button>
+                    </div>
+                </div>
+
+                <!-- הדגשת כותרות -->
+                <div class="control-group">
+                    <h3>הדגשת כותרות</h3>
+                    <div class="button-group">
+                        <button class="control-button toggle" data-action="highlight-headings" aria-label="הדגש כותרות">
+                            הדגש כותרות
+                        </button>
+                    </div>
+                </div>
+
+                <!-- עצור אנימציות -->
+                <div class="control-group">
+                    <h3>אנימציות</h3>
+                    <div class="button-group">
+                        <button class="control-button toggle" data-action="stop-animations" aria-label="עצור אנימציות">
+                            עצור אנימציות
+                        </button>
+                    </div>
+                </div>
+
+                <!-- איפוס -->
+                <div class="control-group">
+                    <button class="control-button reset-button" data-action="reset-all" aria-label="אפס את כל ההגדרות">
+                        אפס הכל
+                    </button>
+                </div>
+            </div>
+
+            <!-- הצהרת נגישות -->
+            <div class="accessibility-statement">
+                <h3>הצהרת נגישות</h3>
+                <p>
+                    אתר זו נבנה בהתאם לתקן הישראלי (ת"י 5568) ברמת AA של WCAG 2.0.
+                    האתר מותאם לתצוגה בדפדפנים המובילים ובטלפונים ניידים.
+                </p>
+                <p>
+                    במידה ונתקלתם בבעיית נגישות באתר, אנא פנו אלינו ונשמח לסייע.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- תוכן העמוד הראשי -->
+    <header role="banner">
+        <nav role="navigation" aria-label="תפריט ראשי">
+            <h1>אתר נגיש לדוגמה</h1>
+            <ul>
+                <li><a href="#home">דף הבית</a></li>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="home">
+            <h2>ברוכים הבאים</h2>
+            <p>
+                אתר זה נבנה בהתאם לתקן הישראלי 5568 לנגישות אתרי אינטרנט.
+                האתר כולל כפתור נגישות מתקדם המאפשר התאמה אישית של חוויית הגלישה.
+            </p>
+        </section>
+
+        <section id="about">
+            <h2>אודות</h2>
+            <p>
+                תקן ישראלי 5568 מבוסס על WCAG 2.0 ברמת AA ומטרתו להבטיח כי אתרי אינטרנט
+                יהיו נגישים לאנשים עם מוגבלויות שונות, כולל מוגבלויות ראייה, שמיעה,
+                מוטוריות וקוגניטיביות.
+            </p>
+        </section>
+
+        <section id="services">
+            <h2>תכונות נגישות</h2>
+            <ul>
+                <li>התאמת גודל טקסט</li>
+                <li>מצבי ניגודיות שונים</li>
+                <li>הדגשת קישורים וכותרות</li>
+                <li>פונט קריא במיוחד</li>
+                <li>עצירת אנימציות</li>
+                <li>תמיכה בניווט מקלדת</li>
+                <li>תמיכה בקוראי מסך</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>צור קשר</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">שם מלא:</label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">דואר אלקטרוני:</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="message">הודעה:</label>
+                    <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                </div>
+                <button type="submit">שלח</button>
+            </form>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 אתר נגיש. כל הזכויות שמורות.</p>
+        <p>
+            <a href="#accessibility">הצהרת נגישות</a> |
+            <a href="#privacy">מדיניות פרטיות</a>
+        </p>
+    </footer>
+
+    <script src="accessibility.js"></script>
+</body>
+</html>
