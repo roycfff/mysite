@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Comet — גלישה פרטית ובטוחה</title>
+    <meta name="description" content="גלוש באינטרנט בפרטיות מלאה ובמהירות גבוהה עם דפדפן Comet. חסימת מעקב, גלישה פרטית מובנית וממשק נקי." />
+    <link rel="canonical" href="https://go.getcomet.app/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Comet — גלישה פרטית ובטוחה" />
+    <meta property="og:description" content="דפדפן מתקדם שמגן על הפרטיות שלך ומאפשר גלישה מהירה ובטוחה" />
+    <meta property="og:url" content="https://go.getcomet.app/" />
+    <meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%234F46E5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='Segoe UI, Arial' font-size='64'>Comet</text></svg>" />
+
+    <!-- Theme Color for mobile address bar -->
+    <meta name="theme-color" content="#4F46E5" />
+
+    <style>
+      :root {
+        --primary: #4f46e5; /* Indigo-600 */
+        --secondary: #7c3aed; /* Violet-600 */
+        --bg: #0b1020;
+        --text: #f8fafc;
+        --muted: #cbd5e1;
+        --card: #0f1733;
+        --shadow: 0 10px 35px rgba(79, 70, 229, 0.25);
+        --radius: 16px;
+      }
+
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Arial, "Noto Sans Hebrew", sans-serif;
+        background: radial-gradient(1200px 600px at 75% -10%, rgba(124,58,237,0.25), transparent),
+                    radial-gradient(900px 500px at 10% 110%, rgba(79,70,229,0.25), transparent),
+                    linear-gradient(180deg, #0b1020 0%, #0b1020 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+      /* Header / Hero */
+      header {
+        position: relative;
+        padding: 28px 0 0;
+      }
+      .nav {
+        display: flex; align-items: center; justify-content: space-between;
+        gap: 16px; padding: 8px 0;
+      }
+      .brand {
+        display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.3px;
+      }
+      .logo {
+        width: 36px; height: 36px; border-radius: 12px; display: inline-grid; place-items: center;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        box-shadow: var(--shadow);
+      }
+      .nav a {
+        color: var(--muted); text-decoration: none; font-size: 14px; padding: 8px 12px; border-radius: 10px;
+        transition: color .2s ease, background-color .2s ease, transform .2s ease;
+      }
+      .nav a:hover { color: var(--text); background: rgba(255,255,255,0.06); transform: translateY(-1px); }
+
+      .hero {
+        display: grid; grid-template-columns: 1.1fr; gap: 18px; align-items: center; padding: 64px 0 40px;
+        text-align: center;
+      }
+      .badge {
+        display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted);
+        background: rgba(79, 70, 229, 0.12); border: 1px solid rgba(124,58,237,0.25);
+        padding: 8px 12px; border-radius: 999px; backdrop-filter: blur(6px);
+      }
+      h1 { font-size: clamp(28px, 5vw, 48px); line-height: 1.15; margin: 10px 0 8px; }
+      .sub { color: var(--muted); font-size: clamp(16px, 2.6vw, 20px); margin: 0 auto 22px; max-width: 720px; }
+
+      .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
+      .btn {
+        appearance: none; border: none; cursor: pointer; text-decoration: none; position: relative;
+        padding: 14px 22px; border-radius: 14px; font-weight: 700; letter-spacing: .3px;
+        transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+        display: inline-flex; align-items: center; gap: 10px;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #fff; box-shadow: 0 10px 24px rgba(124,58,237,.35), inset 0 1px 0 rgba(255,255,255,.12);
+      }
+      .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(124,58,237,.42); }
+      .btn-ghost {
+        background: rgba(255,255,255,0.05); color: var(--text); border: 1px solid rgba(255,255,255,0.12);
+      }
+      .btn-ghost:hover { background: rgba(255,255,255,0.09); transform: translateY(-2px); }
+
+      /* Sections */
+      section { padding: 56px 0; }
+      .section-title { font-size: 28px; margin: 0 0 18px; text-align: center; }
+      .section-sub { color: var(--muted); text-align: center; margin: 0 auto 32px; max-width: 760px; }
+
+      .features {
+        display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 8px;
+      }
+      .card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.10); border-radius: var(--radius); padding: 18px; 
+        box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 10px 30px rgba(0,0,0,0.25);
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+        opacity: 0; transform: translateY(10px);
+      }
+      .card.show { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease, box-shadow .2s ease; }
+      .icon {
+        width: 42px; height: 42px; border-radius: 12px; display: inline-grid; place-items: center; margin-bottom: 8px;
+        background: linear-gradient(135deg, rgba(79,70,229,.2), rgba(124,58,237,.2)); color: #fff;
+      }
+      .card h3 { margin: 6px 0 6px; font-size: 18px; }
+      .card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .step { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+      .step h4 { margin: 0 0 6px; font-size: 16px; }
+      .step p { margin: 0; color: var(--muted); font-size: 14px; }
+
+      footer { padding: 26px 0 40px; color: var(--muted); text-align: center; font-size: 14px; }
+      footer a { color: #c7b8ff; text-decoration: none; }
+      footer a:hover { text-decoration: underline; }
+
+      /* Responsive */
+      @media (max-width: 960px) { .features { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 640px) { .features { grid-template-columns: 1fr; } .steps { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <nav class="nav" aria-label="ניווט ראשי">
+        <div class="brand" aria-label="Comet">
+          <span class="logo" aria-hidden="true">☄️</span>
+          <span>Comet</span>
+        </div>
+        <div>
+          <a href="#why">למה Comet?</a>
+          <a href="#how">איך זה עובד?</a>
+          <a href="#cta">התחלה מהירה</a>
+        </div>
+      </nav>
+
+      <div class="hero container">
+        <span class="badge" aria-label="דפדפן פרטי ובטוח">פרטיות • מהירות • בקרה</span>
+        <h1>גלוש באינטרנט בפרטיות מלאה עם Comet</h1>
+        <p class="sub">דפדפן מתקדם שמגן על הפרטיות שלך ומאפשר גלישה מהירה ובטוחה</p>
+        <div class="cta-row" id="cta">
+          <a class="btn btn-primary" href="https://go.getcomet.app/" rel="nofollow noopener" target="_self" aria-label="התחל לגלוש עכשיו">
+            🚀 התחל לגלוש עכשיו
+          </a>
+          <a class="btn btn-ghost" href="https://go.getcomet.app/" rel="noopener" target="_blank" aria-label="למד עוד על Comet">
+            📘 למד עוד על Comet
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="why" class="container" aria-labelledby="why-title">
+        <h2 id="why-title" class="section-title">למה Comet?</h2>
+        <p class="section-sub">הדרך החכמה לגלוש מהר, נקי ובפרטיות מלאה</p>
+        <div class="features">
+          <article class="card" tabindex="0">
+            <div class="icon" aria-hidden="true">🛡️</div>
+            <h3>גלישה פרטית מובנית</h3>
+            <p>הגנה מתקדמת על המידע שלך כברירת מחדל.</p>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="icon" aria-hidden="true">⚡</div>
+            <h3>מהירות גבוהה</h3>
+            <p>מנוע מהיר וקליל שמותאם לביצועים.</p>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="icon" aria-hidden="true">🚫</div>
+            <h3>חסימת מעקב אוטומטית</h3>
+            <p>חוסם מעקבים, קובצי צד שלישי וטראקרים.</p>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="icon" aria-hidden="true">✨</div>
+            <h3>ממשק נקי ופשוט</h3>
+            <p>עיצוב נקי ומודרני ללא הסחות דעת.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how" class="container" aria-labelledby="how-title">
+        <h2 id="how-title" class="section-title">איך זה עובד?</h2>
+        <p class="section-sub">שלושה צעדים פשוטים ותתחיל לגלוש</p>
+        <div class="steps">
+          <div class="step">
+            <h4>1) הורדה והתקנה</h4>
+            <p>לחץ על "התחל לגלוש עכשיו" והתקן את Comet.</p>
+          </div>
+          <div class="step">
+            <h4>2) הפעלת הגנות</h4>
+            <p>ההגנות פועלות אוטומטית — אין צורך בהגדרות מורכבות.</p>
+          </div>
+          <div class="step">
+            <h4>3) גלישה בטוחה</h4>
+            <p>נהנה מהאינטרנט מהר יותר, נקי יותר ובפרטיות מלאה.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container">
+      <p>נבנה באהבה עבור קידום Comet • קרדיט: צוות הפיתוח</p>
+    </footer>
+
+    <script>
+      // Reveal on scroll for feature cards
+      (function() {
+        var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) { entry.target.classList.add('show'); io.unobserve(entry.target); }
+            });
+          }, { threshold: 0.12 });
+          cards.forEach(function(card){ io.observe(card); });
+        } else {
+          // Fallback: show immediately
+          cards.forEach(function(card){ card.classList.add('show'); });
+        }
+      })();
+
+      // Keyboard focus ripple on primary CTA
+      (function(){
+        var primary = document.querySelector('.btn-primary');
+        if (!primary) return;
+        primary.addEventListener('focus', function(){ primary.style.boxShadow = '0 16px 32px rgba(124,58,237,.5)'; });
+        primary.addEventListener('blur', function(){ primary.style.boxShadow = '0 10px 24px rgba(124,58,237,.35)'; });
+      })();
+    </script>
+  </body>
+</html>
+
+
